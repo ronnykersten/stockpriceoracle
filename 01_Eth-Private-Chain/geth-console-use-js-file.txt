@@ -1,0 +1,2 @@
+// execute list of commands bundled in a javascript file (in geth console):
+loadScript("/Full/Path/to/Script.js")

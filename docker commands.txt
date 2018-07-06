@@ -1,0 +1,9 @@
+# build docker image
+docker build -t ronnyy/StockPriceOracle:0.1 .
+
+# run image as container and remove it if it already exists
+docker run --rm -ti ronnyy/StockPriceOracle:0.1
+
+# delete docker images and containers that are no longer used (e.g. building steps)
+alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
